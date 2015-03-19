@@ -5,25 +5,35 @@
 ** Login   <wroble_h@epitech.eu>
 ** 
 ** Started on  Wed Mar 18 13:18:20 2015 Hubert WROBLEWSKI
-** Last update Wed Mar 18 13:37:44 2015 Hubert WROBLEWSKI
+** Last update Thu Mar 19 18:09:52 2015 Hubert WROBLEWSKI
 */
 
-int	convert(int i)
+#include <signal.h>
+#include <unistd.h>
+
+int	convert(int i, int nb)
 {
   int	bina;
   int	stock;
+  int	verif;
 
   bina = 128;
   stock = 0;
   while (bina >= 1)
     {
-      stock = stock * 10;
+      usleep(200);
       if (i >= bina)
 	{
+	  if ((verif = kill(nb, SIGUSR2)) == -1)
+	    return (-1);
 	  i = i - bina;
-	  stock = stock + 1;
+	}
+      else
+	{
+	  if ((verif = kill(nb, SIGUSR1)) == -1)
+	    return (-1);
 	}
       bina = bina / 2;
     }
-  return (stock);
+  return (0);
 }

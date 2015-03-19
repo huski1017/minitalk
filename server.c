@@ -5,21 +5,44 @@
 ** Login   <wroble_h@epitech.net>
 ** 
 ** Started on  Tue Mar  3 16:36:24 2015 Hubert Wroblewski
-** Last update Tue Mar  3 17:06:55 2015 Hubert Wroblewski
+** Last update Thu Mar 19 17:54:29 2015 Hubert WROBLEWSKI
 */
 
 #include <unistd.h>
 #include <signal.h>
 #include <stdio.h>
 
+void		capt(int i)
+{
+  static int	stk = 0;
+  static int	cnt = 0;
+  int		result;
+
+  if (cnt < 8)
+    {
+      if (cnt == 7)
+	stk = stk + i;
+      else
+	stk = (stk + i) * 10;
+      cnt++;
+    }
+  if (cnt == 8)
+    {
+      result = traduct(stk);
+      my_putchar(result);
+      stk = 0;
+      cnt = 0;
+    }
+}
+
 void	my_sig()
 {
-  printf("coucou\n");
+  capt(0);
 }
 
 void	my_sigi()
 {
-  printf("ma biche\n");
+  capt(1);
 }
 
 int	main()
