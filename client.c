@@ -5,7 +5,7 @@
 ** Login   <wroble_h@epitech.net>
 ** 
 ** Started on  Tue Mar  3 16:24:29 2015 Hubert Wroblewski
-** Last update Thu Mar 19 18:01:53 2015 Hubert WROBLEWSKI
+** Last update Fri Mar 20 11:08:22 2015 Hubert WROBLEWSKI
 */
 
 int	boucle(char *str, int nb)
@@ -15,7 +15,11 @@ int	boucle(char *str, int nb)
   i = 0;
   while (str[i] != '\0')
     {
-      convert(str[i], nb);
+      if (convert(str[i], nb) == -1)
+	{
+	  my_putstr("Error : Invalid PID.\n");
+	  return (-1);
+	}
       i++;
     }
   return (0);
@@ -32,6 +36,7 @@ int	main(int ac, char **av)
       return (1);
     }
   nb = my_getnbr(av[1]);
-  boucle(av[2], nb);
+  if (boucle(av[2], nb) == -1)
+    return (-1);
   return (0);
 }
