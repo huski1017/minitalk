@@ -5,16 +5,16 @@
 ## Login   <wroble_h@epitech.net>
 ## 
 ## Started on  Tue Mar  3 16:51:14 2015 Hubert Wroblewski
-## Last update Thu Mar 19 17:48:14 2015 Hubert WROBLEWSKI
+## Last update Sun Mar 22 12:30:14 2015 Hubert WROBLEWSKI
 ##
 
 CC	= gcc
 
 RM	= rm -f
 
-NAME	= client
+NAME	= client/client
 
-NAMEE	= server
+NAMEE	= server/server
 
 SRCS	= server.c \
 	my_put_nbr.c \
