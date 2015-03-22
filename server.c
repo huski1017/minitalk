@@ -5,7 +5,7 @@
 ** Login   <wroble_h@epitech.net>
 ** 
 ** Started on  Tue Mar  3 16:36:24 2015 Hubert Wroblewski
-** Last update Thu Mar 19 17:54:29 2015 Hubert WROBLEWSKI
+** Last update Sun Mar 22 09:36:35 2015 Hubert WROBLEWSKI
 */
 
 #include <unistd.h>
@@ -51,6 +51,7 @@ int	main()
 
   pid = getpid();
   my_put_nbr(pid);
+  my_putchar('\n');
   signal(SIGUSR1, &my_sig);
   signal(SIGUSR2, &my_sigi);
   while (42)

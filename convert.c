@@ -5,7 +5,7 @@
 ** Login   <wroble_h@epitech.eu>
 ** 
 ** Started on  Wed Mar 18 13:18:20 2015 Hubert WROBLEWSKI
-** Last update Fri Mar 20 15:24:42 2015 Hubert WROBLEWSKI
+** Last update Sun Mar 22 09:44:31 2015 Hubert WROBLEWSKI
 */
 
 #include <signal.h>
@@ -21,7 +21,8 @@ int	convert(int i, int nb)
   stock = 0;
   while (bina >= 1)
     {
-      usleep(200);
+      if (usleep(300) == -1)
+	return (-2);
       if (i >= bina)
 	{
 	  if ((verif = kill(nb, SIGUSR2)) == -1)

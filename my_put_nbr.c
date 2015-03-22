@@ -5,12 +5,18 @@
 ** Login   <wroble_h@epitech.net>
 ** 
 ** Started on  Thu Oct  2 09:28:15 2014 Hubert Wroblewski
-** Last update Tue Mar  3 16:48:04 2015 Hubert Wroblewski
+** Last update Sun Mar 22 09:52:52 2015 Hubert WROBLEWSKI
 */
+
+#include <stdlib.h>
 
 void	my_putchar(char c)
 {
-  write(1, &c, 1);
+  if ((write(1, &c, 1)) == -1)
+    {
+      (void)write(1, "Error : function write failed.\n", 31);
+      exit(1);
+    }
 }
 
 int	my_put_nbr(int nb)
