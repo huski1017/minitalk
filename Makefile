@@ -5,7 +5,7 @@
 ## Login   <wroble_h@epitech.net>
 ## 
 ## Started on  Tue Mar  3 16:51:14 2015 Hubert Wroblewski
-## Last update Sun Mar 22 12:30:14 2015 Hubert WROBLEWSKI
+## Last update Wed Mar 25 11:16:18 2015 Hubert WROBLEWSKI
 ##
 
 CC	= gcc
@@ -16,15 +16,15 @@ NAME	= client/client
 
 NAMEE	= server/server
 
-SRCS	= server.c \
+SRCS	= server/server.c \
 	my_put_nbr.c \
 	my_putstr.c \
-	traduct.c
+	server/traduct.c
 
-SRCSS	= client.c \
+SRCSS	= client/client.c \
 	my_putstr.c \
 	my_getnbr.c \
-	convert.c
+	client/convert.c
 
 OBJS	= $(SRCS:.c=.o)
 
